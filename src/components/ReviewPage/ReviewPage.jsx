@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 function ReviewPage () {
+    const history = useHistory();
 
     const inputArray = useSelector(store => store.feedback);
     const q1 = inputArray[0];
@@ -16,6 +17,7 @@ function ReviewPage () {
         }).catch(error => {
       console.log(error);
     })
+    history.push('/6')
     }
 
     return (
