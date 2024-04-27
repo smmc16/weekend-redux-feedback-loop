@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 
-const feedbackInput = (state = [], action) => {
+const feedback = (state = [], action) => {
     if (action.type === 'INPUT_FEEDBACK') {
         return [...state, action.payload];
     }
@@ -10,7 +10,7 @@ const feedbackInput = (state = [], action) => {
 
 const reduxStore = createStore(
     combineReducers({
-      feedbackInput
+      feedback
     }),
     applyMiddleware(logger)
   );
