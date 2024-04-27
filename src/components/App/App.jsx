@@ -21,16 +21,16 @@ function App() {
       </header>
       <Router>
         <Route exact path='/'>
-          <FeedbackInput question={q1} inputType={'number'}/>
+          <FeedbackInput question={q1} inputType={'number'} next={'2'} ph={'1-5'}/>
         </Route>
         <Route path='/2'>
-          <FeedbackInput question={q2} inputType={'number'}/>
+          <FeedbackInput question={q2} inputType={'number'} next={'3'} ph={'1-5'}/>
         </Route>
         <Route path='/3'>
-          <FeedbackInput question={q3} inputType={'number'}/>
+          <FeedbackInput question={q3} inputType={'number'} next={'4'} ph={'1-5'}/>
         </Route>
         <Route path='/4'>
-          <FeedbackInput question={q4} inputType={'text'}/>
+          <FeedbackInput question={q4} inputType={'text'} next={'5'} ph={'Comments?'}/>
         </Route>
         <Route path='/5'>
           <ReviewPage />

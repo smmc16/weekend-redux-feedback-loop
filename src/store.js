@@ -14,3 +14,5 @@ const reduxStore = createStore(
     }),
     applyMiddleware(logger)
   );
+
+  export default reduxStore;

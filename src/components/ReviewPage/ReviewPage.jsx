@@ -5,7 +5,7 @@ function ReviewPage () {
 
     return (
         <>
-        
+        <p>Review</p>
         </>
     )
 }
