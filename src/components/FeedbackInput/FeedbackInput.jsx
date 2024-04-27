@@ -1,6 +1,9 @@
 import './FeedbackInput.css';
+import { useState } from 'react';
 
-function FeebackInput ({question}) {
+function FeedbackInput ({question, inputType}) {
+
+    const [userInput, setUserInput] = useState('');
 
     function handleSubmit () {
 
@@ -10,11 +13,11 @@ function FeebackInput ({question}) {
         <>
         <p>{question}</p>
         <form onSubmit={handleSubmit}>
-            <input  />
-            <input  type="submit" />
+            <input data-testid="input" type={inputType} />
+            <input data-testid="next" type="submit" />
         </form>
         </>
     )
 }
 
-export default FeebackInput;
+export default FeedbackInput;
