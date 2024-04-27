@@ -25,7 +25,7 @@ function ReviewPage () {
         <p>Understanding: {q2}</p>
         <p>Support: {q3}</p>
         <p>Comments: {q4}</p>
-        <button onClick={handleClick}>Submit</button>
+        <button data-testid="next" onClick={handleClick}>Submit</button>
         </>
     )
 }

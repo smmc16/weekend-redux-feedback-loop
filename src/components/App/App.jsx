@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import FeedbackInput from '../FeedbackInput/FeedbackInput.jsx';
 import ReviewPage from '../ReviewPage/ReviewPage.jsx';
+import ThanksPage from '../ThanksPage/ThanksPage.jsx';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route path='/5'>
           <ReviewPage />
+        </Route>
+        <Route path='/6'>
+          <ThanksPage />
         </Route>
       </Router>
     </div>
