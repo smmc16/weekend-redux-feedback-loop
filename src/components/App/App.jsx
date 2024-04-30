@@ -9,10 +9,10 @@ import ThanksPage from '../ThanksPage/ThanksPage.jsx';
 
 function App() {
   
-  const q1 = 'How are you feeling today?';
-  const q2 = 'How well are you understanding the content?';
-  const q3 = 'How well are you being supported?';
-  const q4 = 'Any comments you want to leave?';
+  const question1 = 'How are you feeling today?';
+  const question2 = 'How well are you understanding the content?';
+  const question3 = 'How well are you being supported?';
+  const question4 = 'Any comments you want to leave?';
 
   return (
     <div className='App'>
@@ -22,16 +22,16 @@ function App() {
       </header>
       <Router>
         <Route exact path='/'>
-          <FeedbackInput question={q1} inputType={'number'} next={'2'} ph={'1-5'}/>
+          <FeedbackInput question={question1} inputType={'number'} next={'2'} ph={'1-5'} />
         </Route>
         <Route path='/2'>
-          <FeedbackInput question={q2} inputType={'number'} next={'3'} ph={'1-5'}/>
+          <FeedbackInput question={question2} inputType={'number'} next={'3'} ph={'1-5'} />
         </Route>
         <Route path='/3'>
-          <FeedbackInput question={q3} inputType={'number'} next={'4'} ph={'1-5'}/>
+          <FeedbackInput question={question3} inputType={'number'} next={'4'} ph={'1-5'} />
         </Route>
         <Route path='/4'>
-          <FeedbackInput question={q4} inputType={'text'} next={'5'} ph={'Comments?'}/>
+          <FeedbackInput question={question4} inputType={'text'} next={'5'} ph={'Comments?'} />
         </Route>
         <Route path='/5'>
           <ReviewPage />
