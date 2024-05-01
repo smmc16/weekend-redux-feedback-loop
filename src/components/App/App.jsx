@@ -22,16 +22,16 @@ function App() {
       </header>
       <Router>
         <Route exact path='/'>
-          <FeedbackInput question={question1} inputType={'number'} next={'2'} ph={'1-5'} />
+          <FeedbackInput question={question1} inputType={'number'} next={'2'} ph={'1-5'} require={true}/>
         </Route>
         <Route path='/2'>
-          <FeedbackInput question={question2} inputType={'number'} next={'3'} ph={'1-5'} />
+          <FeedbackInput question={question2} inputType={'number'} next={'3'} ph={'1-5'} require={true}/>
         </Route>
         <Route path='/3'>
-          <FeedbackInput question={question3} inputType={'number'} next={'4'} ph={'1-5'} />
+          <FeedbackInput question={question3} inputType={'number'} next={'4'} ph={'1-5'} require={true}/>
         </Route>
         <Route path='/4'>
-          <FeedbackInput question={question4} inputType={'text'} next={'5'} ph={'Comments?'} />
+          <FeedbackInput question={question4} inputType={'text'} next={'5'} ph={'Comments?'} require={false}/>
         </Route>
         <Route path='/5'>
           <ReviewPage />
