@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Button from '@mui/material/Button';
 
 function ThanksPage () {
     const history = useHistory();
@@ -15,7 +16,7 @@ function ThanksPage () {
     return (
         <>
         <p>Thank you for your feedback!</p>
-        <button data-testid="next" onClick={handleClick}>Submit more feedback</button>
+        <Button data-testid="next" variant="contained" onClick={handleClick}>Submit more feedback</Button>
         </>
     )
 }

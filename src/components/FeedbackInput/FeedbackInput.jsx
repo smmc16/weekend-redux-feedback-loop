@@ -2,6 +2,8 @@ import './FeedbackInput.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function FeedbackInput ({question, inputType, next, ph, require}) {
     const dispatch = useDispatch();
@@ -19,12 +21,12 @@ function FeedbackInput ({question, inputType, next, ph, require}) {
         }
         
     }
-    
+
     return (
         <>
         <p>{question}</p>
         <form onSubmit={handleSubmit}>
-            <input 
+            <TextField 
             id="inputField"
             data-testid="input" 
             type={inputType} 
@@ -33,7 +35,8 @@ function FeedbackInput ({question, inputType, next, ph, require}) {
             onChange={(e) => setUserInput(e.target.value)}
 
             />
-            <input data-testid="next" type="submit" />
+            <br />
+            <Button data-testid="next" variant='contained' type="submit">Submit</Button>
         </form>
         </>
     )

@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function ReviewPage () {
     const history = useHistory();
@@ -15,6 +17,9 @@ function ReviewPage () {
     const postArray = [q1, q2, q3, q4];
 
     function handleClick () {
+        if (q1 == false || q2 == false || q3 == false) {
+            return alert('Please do not leave blank feedback')
+        } else {
         axios.post('/api/feedback', postArray).then((response) => {
 
         }).catch(error => {
@@ -22,16 +27,18 @@ function ReviewPage () {
     })
     history.push('/6')
     }
+    }
 
     return (
         <>
         <h3>Review Your Feedback</h3> 
         <form onSubmit={handleClick}>
-        <p>Feeling: {q1}</p> <input value={q1} onChange={(e) => setQ1(e.target.value)} required/>
-        <p>Understanding: {q2}</p> <input value={q2} onChange={(e) => setQ2(e.target.value)} required/>
-        <p>Support: {q3}</p> <input value={q3} onChange={(e) => setQ3(e.target.value)} required/>
-        <p>Comments: {q4}</p> <input value={q4} onChange={(e) => setQ4(e.target.value)} />
-        <input data-testid="next" type='submit' value="Submit" />
+        <p>Feeling: {q1}</p> <TextField value={q1} onChange={(e) => setQ1(e.target.value)} required/>
+        <p>Understanding: {q2}</p> <TextField value={q2} onChange={(e) => setQ2(e.target.value)} required/>
+        <p>Support: {q3}</p> <TextField value={q3} onChange={(e) => setQ3(e.target.value)} required/>
+        <p>Comments: {q4}</p> <TextField value={q4} onChange={(e) => setQ4(e.target.value)} />
+        <br />
+        <Button data-testid="next" type='submit' variant="contained">Submit</Button>
         </form>
         </>
     )
