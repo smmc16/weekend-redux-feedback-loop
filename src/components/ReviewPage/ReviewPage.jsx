@@ -25,12 +25,14 @@ function ReviewPage () {
 
     return (
         <>
-        <h3>Review Your Feedback</h3>
-        <p>Feeling: {q1}</p> <input value={q1} onChange={(e) => setQ1(e.target.value)} />
-        <p>Understanding: {q2}</p> <input value={q2} onChange={(e) => setQ2(e.target.value)} />
-        <p>Support: {q3}</p> <input value={q3} onChange={(e) => setQ3(e.target.value)} />
+        <h3>Review Your Feedback</h3> 
+        <form onSubmit={handleClick}>
+        <p>Feeling: {q1}</p> <input value={q1} onChange={(e) => setQ1(e.target.value)} required/>
+        <p>Understanding: {q2}</p> <input value={q2} onChange={(e) => setQ2(e.target.value)} required/>
+        <p>Support: {q3}</p> <input value={q3} onChange={(e) => setQ3(e.target.value)} required/>
         <p>Comments: {q4}</p> <input value={q4} onChange={(e) => setQ4(e.target.value)} />
-        <button data-testid="next" onClick={handleClick}>Submit</button>
+        <input data-testid="next" type='submit' value="Submit" />
+        </form>
         </>
     )
 }
